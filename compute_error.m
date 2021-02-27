@@ -1,18 +1,17 @@
 function [err, bits_x, bits_y] = compute_error(rx_data, tx_data)
-    % TODO DOCS
     % Compute the percent difference between the complete original signal
-    % and the complete received signal. The complete signal includes the
-    % training bits and 5000 bit gaps prior to the actual BPSK data.
-    % Input parameters:
-    % original_signal : Vector containing original signal to compare
-    %                   against.
-    % decoded_signal  : Vector containing decoded signal.
-    %         
-    % Output: 
-    % err             : Percent error between transmitted/received
-    %                   message.
+    % and the complete received signal. In doing so, this function
+    % downsamples the received data (assuming a 40 bit pulse width) and
+    % returns the downsampled x and y bits.
+    % Input Parameters:
+    % rx_data : Vector containing the decoded received signal.
+    % tx_data : Vector containing the transmitted signal to compare
+    %           against.
+    %
+    % Returns:
+    % err     : Percent error between transmitted and received message.
     pulseWidth = 40;
-    % Sample data after separating out data bits.
+    % Create sampled data vectors according to pulse width.
     bits_x = [];
     bits_y = [];
     for i=pulseWidth/2:pulseWidth:length(rx_data)
