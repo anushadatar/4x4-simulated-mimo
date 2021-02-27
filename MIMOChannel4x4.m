@@ -28,3 +28,4 @@ end
 
 Y = H*X;
 Y = Y + N0/sqrt(2)*randn(size(Y)) + N0/sqrt(2)*j*randn(size(Y));
+end
