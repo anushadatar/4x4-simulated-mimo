@@ -1,11 +1,10 @@
-function [w] = generate_weight_vector_mmse(H, n0_var)
-    % TODO modify docs
-    % Generate the weight vector based on the channel (using the mmse
-    % receiver).
+function [w] = mmse_generate_weight_matrix(H, n0_var)
+    % Generate the weight vector based on the channel (using the MMSE
+    % receiver, which does not know original channel parameters).
     % Input Parameters:
-    % H       : The aggregated channel parameter matrix.
+    % H      : The aggregated channel parameter matrix.
+    % n0_var : The estimated value of the channel noise.
     % Returns:
-    % w1       : Weight vector used to retrieve x1
-    % w2       : Weight vector used to retrieve x2
+    % w      : Assembled 4x4 weight vector.
     w = inv(H'*H + n0_var.*eye(4, 4))*H';
 end
