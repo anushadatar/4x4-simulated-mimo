@@ -1,0 +1,10 @@
+function [x1, x2, x3, x4] = mmse_simulation(x_train, x_data)
+    % TODO
+    
+    [H, n0_var] = estimate_channel(x_train);
+    received_data = MIMOChannel4x4(x_data);
+    weight_matrix = mmse_generate_weight_matrix(H, n0_var);
+    [x1, x2, x3, x4] = mmse_decode_matrix(received_data, weight_matrix); 
+       
+
+end

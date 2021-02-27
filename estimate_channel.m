@@ -1,4 +1,4 @@
-function [H, N] = estimate_channel(x_train)
+function [H, n0_var] = estimate_channel(x_train)
     % TODO
 
     % Make zeros vector for transmission
@@ -31,6 +31,6 @@ function [H, N] = estimate_channel(x_train)
     H = [h_col_1, h_col_2, h_col_3, h_col_4];
     
     N = MIMOChannel4x4(send_zeros);
-    n0 = mean(mean(N));
+    n0_var = mean(var(N, 0, 2));
     
 end
