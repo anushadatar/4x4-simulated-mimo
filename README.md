@@ -1,6 +1,5 @@
 # 4x4 Simulated MIMO
 *Mark Goldwater and Anusha Datar*
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 Olin College SP21 Principles of Wireless Communications Lab 2b.
 # Summary
 This repository contains code and documentation associated with
